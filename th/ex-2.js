@@ -14,6 +14,21 @@
 
 // Start coding here
 
+function findIfProductsAvailable(products, targetProduct, targetQuantity){
+    for (let i =0; i<products.length; i++){
+        if (targetProduct === products[i].name){
+            if(targetQuantity <= products[i].quantity){
+                return `${targetQuantity} ${targetProduct} are available at ${products[i].zone} `
+            }
+            else  {
+                 return `Sorry, we've got only  ${products[i].quantity} ${targetProduct}(s) available at Zone  ${products[i].zone}`
+            }
+            }
+        }
+        return `We don't have ${targetProduct}`
+    }
+
+
 const products = [
   { name: "Chocolate Milk", quantity: 10, zone: "A1" },
   { name: "Pepsi", quantity: 5, zone: "B2" },
